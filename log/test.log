@@ -4408,3 +4408,2128 @@ Processing by Devise::SessionsController#new as HTML
   Rendered devise/sessions/new.html.erb within layouts/application (1.8ms)
 Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.0ms)
   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:48:03 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 72ms (Views: 71.8ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2014-05-29 16:48:03 -0300
+Processing by AccountsController#new as HTML
+  Rendered accounts/new.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 41ms (Views: 26.8ms | ActiveRecord: 4.9ms)
+Started POST "/accounts" for 127.0.0.1 at 2014-05-29 16:48:03 -0300
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "account"=>{"owner_attributes"=>{"name"=>"Pablo", "email"=>"pablo@pablo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "subdomain"=>"test_subdomain"}, "commit"=>"Create Account"}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (1.0ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('test_subdomain') LIMIT 1
+  [1m[36mUser Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'pablo@pablo.com' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 19:48:03.325425"], ["email", "pablo@pablo.com"], ["encrypted_password", "$2a$04$xTs6ee/L7eeLxLGfhkaFwu1x2BYtyqmT6z7UAVDsfUMheOvWf183m"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:48:03.325425"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 19:48:03.329836"], ["owner_id", 170], ["subdomain", "test_subdomain"], ["updated_at", "2014-05-29 19:48:03.329836"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 22ms (ActiveRecord: 4.0ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:48:03 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-29 19:48:03.347925"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$79x23T1yzcOU.VpcJbGXVuf5aDFK56jJZIWOSQ84gy1icfW244x9K"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:48:03.347925"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('test') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 19:48:03.350813"], ["owner_id", 171], ["subdomain", "test"], ["updated_at", "2014-05-29 19:48:03.350813"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email2@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-29 19:48:03.355213"], ["email", "email2@gmail.com"], ["encrypted_password", "$2a$04$Hgaar898WsIB1TlBl4tdBeHKHkYu6SpJfgUNVK.K9aF47P8POhPP."], ["name", "Pablo"], ["updated_at", "2014-05-29 19:48:03.355213"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mAccount Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('test') LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('test/') LIMIT 1
+  [1m[36mAccount Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('test/') LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('www') LIMIT 1
+  [1m[36mAccount Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('www') LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('bolandrm') LIMIT 1
+  [1m[36mAccount Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('bolandrm') LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAccount Load (0.7ms)[0m  SELECT  "accounts".* FROM "accounts"   ORDER BY "accounts"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "accounts" ("created_at", "subdomain", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2014-05-29 19:48:03.383630"], ["subdomain", "a"], ["updated_at", "2014-05-29 19:48:03.383630"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.5ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('a') LIMIT 1
+  [1m[36mAccount Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('a') LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (2.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAccount Exists (0.5ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('www') LIMIT 1
+  [1m[36mAccount Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('www') LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAccount Exists (0.5ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE "accounts"."subdomain" IS NULL LIMIT 1
+  [1m[36mAccount Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE "accounts"."subdomain" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAccount Exists (0.5ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('.test') LIMIT 1
+  [1m[36mAccount Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('.test') LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAccount Exists (0.8ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE "accounts"."subdomain" IS NULL LIMIT 1
+  [1m[36mAccount Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE "accounts"."subdomain" IS NULL LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAccount Exists (0.6ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('test') LIMIT 1
+  [1m[36mAccount Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('test') LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email3@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 19:48:03.484834"], ["email", "email3@gmail.com"], ["encrypted_password", "$2a$04$Gh/WT.miLMW6vB2UnNPRh.aFpupTkDrof8yAS3sYzwJgRPuZwZ5EK"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:48:03.484834"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:48:03 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:48:03 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'email3@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:48:03 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 173  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email4@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 19:48:03.532587"], ["email", "email4@gmail.com"], ["encrypted_password", "$2a$04$rsF1TEQEdcp4sSUP5jnJm.ym3hUvVw36dz4rYyjQpt68k7RQWoMvu"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:48:03.532587"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:48:03 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:48:03 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email4@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'email4@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+Completed 401 Unauthorized in 3ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email4@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (0.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email5@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-29 19:48:03.564782"], ["email", "email5@gmail.com"], ["encrypted_password", "$2a$04$peoxN8A/SuQ0vk.xO4REIO8/LlDuLbhy8q3bsxZbdBs6VI.18u5xi"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:48:03.564782"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:48:03 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:48:03 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email5@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email5@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:48:03 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 175  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:48:03 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 175  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.5ms)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-05-29 16:48:03 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 175  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 1.0ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:48:03 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-29 19:54:06.843546"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$oKYb2LhM7nEmZeIFCul59.pWPiEn9sDNY1UajNYkynWvSl.5XsgXO"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:54:06.843546"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:54:06 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 62ms (Views: 39.8ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:54:06 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email1@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 10ms (ActiveRecord: 0.9ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:54:06 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 176  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email2@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-29 19:54:06.957354"], ["email", "email2@gmail.com"], ["encrypted_password", "$2a$04$gSLuPT8vA89UaDVsnTw37e153fk3Bm.yaBoZRar0/.hpVYpgFyVs."], ["name", "Pablo"], ["updated_at", "2014-05-29 19:54:06.957354"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:54:06 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:54:06 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email2@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 401 Unauthorized in 3ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (0.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email3@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 19:54:06.991017"], ["email", "email3@gmail.com"], ["encrypted_password", "$2a$04$1/Ke3ZY7IiY5qkB/ImUdWecyyhKWA4cNDUstV89Ubv43R4LBjZDg."], ["name", "Pablo"], ["updated_at", "2014-05-29 19:54:06.991017"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:54:06 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:54:07 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'email3@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:54:07 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 178  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:54:07 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 178  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.5ms)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-05-29 16:54:07 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 178  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.8ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:54:07 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.9ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain1') LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 19:55:06.134699"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$2LPq4Iur.NDxluIZ/kNlju1d3qBe.VysZCbNFN1ArIcztirsDGKvu"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:55:06.134699"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 19:55:06.138907"], ["owner_id", 179], ["subdomain", "subdomain1"], ["updated_at", "2014-05-29 19:55:06.138907"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email2@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-29 19:55:06.144330"], ["email", "email2@gmail.com"], ["encrypted_password", "$2a$04$8ND/tqJugOo1m6Bn4HtjuOkMJBvkEGmtIi6on.P5TjVMkZqGsX0QC"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:55:06.144330"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:55:06 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 62ms (Views: 39.3ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:55:06 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email2@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 10ms (ActiveRecord: 0.9ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:55:06 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 180  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:55:06 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 180  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.6ms)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-05-29 16:55:06 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 180  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:55:06 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.3ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain2') LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email3@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 19:55:06.273583"], ["email", "email3@gmail.com"], ["encrypted_password", "$2a$04$NvXvPqjAlNOGDnG7I8NFROeoXZyiBmsA7X4aP/KwAy.u4tKYNkpb2"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:55:06.273583"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 19:55:06.274861"], ["owner_id", 181], ["subdomain", "subdomain2"], ["updated_at", "2014-05-29 19:55:06.274861"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email4@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-29 19:55:06.280458"], ["email", "email4@gmail.com"], ["encrypted_password", "$2a$04$tceONsRX00EOVVGkSCd/sukXfM5ecMUG/mP44Yr5Zmxa3qC0cTUM."], ["name", "Pablo"], ["updated_at", "2014-05-29 19:55:06.280458"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:55:06 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:55:06 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email4@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email4@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:55:06 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 182  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.5ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain3') LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email5@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 19:55:06.314884"], ["email", "email5@gmail.com"], ["encrypted_password", "$2a$04$4aY9/mVhSZllAtvVll2TpOC8obDpahgOUcRvoVmTlrldYVBDZ2SQy"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:55:06.314884"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 19:55:06.315924"], ["owner_id", 183], ["subdomain", "subdomain3"], ["updated_at", "2014-05-29 19:55:06.315924"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email6@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-29 19:55:06.320020"], ["email", "email6@gmail.com"], ["encrypted_password", "$2a$04$S8KvMBfRAfrgaJYTiiGaHO3b/wbiJGYyfTG3d43nR9qgA3gVMppvS"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:55:06.320020"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:55:06 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:55:06 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email6@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email6@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 401 Unauthorized in 3ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email6@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.9ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain1') LIMIT 1
+  [1m[36mUser Exists (1.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 19:55:31.838110"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$WouaD9nNMQfrMbtMt0cJH.M7rkIhIbl8F.wEySEq7HpZRCrYJW4hu"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:55:31.838110"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 19:55:31.842610"], ["owner_id", 185], ["subdomain", "subdomain1"], ["updated_at", "2014-05-29 19:55:31.842610"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:55:31 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 99ms (Views: 74.1ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:55:31 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email1@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 11ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:55:31 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 185  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain2') LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email2@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 19:55:32.001567"], ["email", "email2@gmail.com"], ["encrypted_password", "$2a$04$UwdqLU66DTQtFlyayoP1SezTuLdngttPKsCck4I.OgS1sRpTEk3uS"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:55:32.001567"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 19:55:32.003012"], ["owner_id", 186], ["subdomain", "subdomain2"], ["updated_at", "2014-05-29 19:55:32.003012"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email3@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-29 19:55:32.008187"], ["email", "email3@gmail.com"], ["encrypted_password", "$2a$04$2CuOzJ.ceWlp6Fv6P.bs/u.7gUHEDhvwxoECAPmm4BGYrRSAWkbhe"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:55:32.008187"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:55:32 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:55:32 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email3@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 401 Unauthorized in 3ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain3') LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email4@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-29 19:55:32.044666"], ["email", "email4@gmail.com"], ["encrypted_password", "$2a$04$2FIWCjLkQrd6ZfoC9UINPOXJ7EmbbFDecP7QK7JL2mM1f2y1GsOuq"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:55:32.044666"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-05-29 19:55:32.046044"], ["owner_id", 188], ["subdomain", "subdomain3"], ["updated_at", "2014-05-29 19:55:32.046044"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email5@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 19:55:32.050789"], ["email", "email5@gmail.com"], ["encrypted_password", "$2a$04$.KGFwmeAxQ3KkgtmTh.rJ.dV0lRZYxYrrJGXYEbCid2BNmwtfcrz2"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:55:32.050789"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:55:32 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:55:32 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email5@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'email5@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:55:32 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 189  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:55:32 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 189  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.4ms)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-05-29 16:55:32 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 189  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 0.9ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:55:32 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (1.0ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain1') LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 19:55:46.184713"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$oWV57rv4rodsDmFc4PbxAuQiSEFRd.WNMoKE7JLu.jeHdcfU6J1M."], ["name", "Pablo"], ["updated_at", "2014-05-29 19:55:46.184713"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 19:55:46.188554"], ["owner_id", 190], ["subdomain", "subdomain1"], ["updated_at", "2014-05-29 19:55:46.188554"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email2@gmail.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-29 19:55:46.194167"], ["email", "email2@gmail.com"], ["encrypted_password", "$2a$04$2IbgiId7IIudQufci3sefOesw4sSRIpvHEGVwRptVRO8XAeAakeMC"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:55:46.194167"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:55:46 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (44.4ms)
+Completed 200 OK in 90ms (Views: 67.6ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:55:46 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email2@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 10ms (ActiveRecord: 0.9ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:55:46 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 191  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:55:46 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 191  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-05-29 16:55:46 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 191  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:55:46 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.3ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain2') LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email3@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 19:55:46.355981"], ["email", "email3@gmail.com"], ["encrypted_password", "$2a$04$RD9k.AMERM5pm2MoXYFoI.wdQyvt7sVl3b1a7J06i6d5u4oBEQJ0S"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:55:46.355981"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 19:55:46.356989"], ["owner_id", 192], ["subdomain", "subdomain2"], ["updated_at", "2014-05-29 19:55:46.356989"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:55:46 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:55:46 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email3@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 401 Unauthorized in 3ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain3') LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email4@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-29 19:55:46.390722"], ["email", "email4@gmail.com"], ["encrypted_password", "$2a$04$m9rajWOzSwPCmJQ/3zK.vuiVpf/sVk36M/hklo24UVvaucQM4Vtky"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:55:46.390722"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-05-29 19:55:46.391767"], ["owner_id", 193], ["subdomain", "subdomain3"], ["updated_at", "2014-05-29 19:55:46.391767"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:55:46 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:55:46 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email4@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'email4@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:55:46 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 193  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.7ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain1') LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 19:55:59.376412"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$.wf7.9tHUpMvsejpOWqOr.0pHnlm3f0wR9hqbMzCvvdYhdFeSYYbO"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:55:59.376412"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 19:55:59.380567"], ["owner_id", 194], ["subdomain", "subdomain1"], ["updated_at", "2014-05-29 19:55:59.380567"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:55:59 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (27.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (43.0ms)
+Completed 200 OK in 89ms (Views: 66.8ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:55:59 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email1@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 10ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:55:59 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 194  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain2') LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email2@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 19:55:59.525969"], ["email", "email2@gmail.com"], ["encrypted_password", "$2a$04$60nC5G/UzhvOxOz2wfbw6exAqP5Bo5YFi.ZvunI.PF0NjeFrmQtOO"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:55:59.525969"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 19:55:59.527341"], ["owner_id", 195], ["subdomain", "subdomain2"], ["updated_at", "2014-05-29 19:55:59.527341"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:55:59 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:55:59 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email2@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 401 Unauthorized in 3ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain3') LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email3@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-29 19:55:59.572027"], ["email", "email3@gmail.com"], ["encrypted_password", "$2a$04$I7DhvnjmtQgDdG/2uwdUh.7dxUZtHvYDebyNuqny3zq9/DCmtO0k6"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:55:59.572027"]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-05-29 19:55:59.573642"], ["owner_id", 196], ["subdomain", "subdomain3"], ["updated_at", "2014-05-29 19:55:59.573642"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:55:59 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:55:59 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'email3@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:55:59 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 196  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:55:59 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 196  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.6ms)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-05-29 16:55:59 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 196  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:55:59 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (1.1ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain1') LIMIT 1
+  [1m[36mUser Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 19:58:00.554600"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$ScnkuOp.Z7YohVIGRyxBnesl/hJp/FXeb1dk130F6WV5ZmfLs4s0u"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:58:00.554600"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 19:58:00.559252"], ["owner_id", 197], ["subdomain", "subdomain1"], ["updated_at", "2014-05-29 19:58:00.559252"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:58:00 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 62ms (Views: 39.1ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:58:00 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email1@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 10ms (ActiveRecord: 0.9ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:58:00 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 197  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain2') LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email2@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 19:58:00.674321"], ["email", "email2@gmail.com"], ["encrypted_password", "$2a$04$nYrmX/0aM6pDnAR9ce6pketAMkTAd/nhq.7gxc0Ow1mc1VVHjyFY2"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:58:00.674321"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 19:58:00.675544"], ["owner_id", 198], ["subdomain", "subdomain2"], ["updated_at", "2014-05-29 19:58:00.675544"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:58:00 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:58:00 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email2@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:58:00 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 198  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:58:00 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 198  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.5ms)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-05-29 16:58:00 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 198  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.8ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:58:00 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.5ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain3') LIMIT 1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email3@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 19:58:00.726963"], ["email", "email3@gmail.com"], ["encrypted_password", "$2a$04$x9EhnxS8Dke1Pl45CYrU.uoAnDTrOGgFUdWNrPK7dfIBZ22X/GCNm"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:58:00.726963"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 19:58:00.728843"], ["owner_id", 199], ["subdomain", "subdomain3"], ["updated_at", "2014-05-29 19:58:00.728843"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:58:00 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:58:00 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email3@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 401 Unauthorized in 4ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (1.0ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain1') LIMIT 1
+  [1m[36mUser Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 19:58:45.604978"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$SiQY8Vs2cauFjNIXgsyK/u3BPW6Q0qQYenjCyR//iFvMDCm0zhqSm"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:58:45.604978"]]
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 19:58:45.609440"], ["owner_id", 200], ["subdomain", "subdomain1"], ["updated_at", "2014-05-29 19:58:45.609440"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:58:45 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 62ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:58:45 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email1@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 10ms (ActiveRecord: 1.0ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:58:45 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 200  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.6ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain2') LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email2@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 19:58:45.733737"], ["email", "email2@gmail.com"], ["encrypted_password", "$2a$04$6KVYAEyXYc4yPyttGTFePeo7WFxB1V23JV4Ahqh5XKqegLyd3abSq"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:58:45.733737"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 19:58:45.735810"], ["owner_id", 201], ["subdomain", "subdomain2"], ["updated_at", "2014-05-29 19:58:45.735810"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:58:45 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:58:45 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email2@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 401 Unauthorized in 4ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 7ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain3') LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email3@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-29 19:58:45.775976"], ["email", "email3@gmail.com"], ["encrypted_password", "$2a$04$M4Al5fhozohiSuEhXfJ7LePn4v.fD9zW1X9.z8I57RtvMIMCir9bC"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:58:45.775976"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-05-29 19:58:45.777184"], ["owner_id", 202], ["subdomain", "subdomain3"], ["updated_at", "2014-05-29 19:58:45.777184"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:58:45 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:58:45 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'email3@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:58:45 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 202  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:58:45 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 202  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.6ms)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-05-29 16:58:45 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 202  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 55ms (ActiveRecord: 1.2ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:58:45 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (1.0ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain1') LIMIT 1
+  [1m[36mUser Exists (1.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 19:59:52.327406"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$6bwtWiyYyZbiJwxrNoqQu.leMi1qO9NRRl/3a7B23XWBJyQP96g2e"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:59:52.327406"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 19:59:52.331324"], ["owner_id", 203], ["subdomain", "subdomain1"], ["updated_at", "2014-05-29 19:59:52.331324"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:59:52 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 62ms (Views: 39.8ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:59:52 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email1@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 9ms (ActiveRecord: 0.9ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:59:52 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 203  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:59:52 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 203  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-05-29 16:59:52 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 203  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:59:52 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.3ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain2') LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email2@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 19:59:52.462152"], ["email", "email2@gmail.com"], ["encrypted_password", "$2a$04$SL3oE6.5IYvlGshfzrbS6OPh3uRgIZPfZH8P6bktcQWp8j5d5X7TC"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:59:52.462152"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 19:59:52.463225"], ["owner_id", 204], ["subdomain", "subdomain2"], ["updated_at", "2014-05-29 19:59:52.463225"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:59:52 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:59:52 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email2@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 16:59:52 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 204  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain3') LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email3@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 19:59:52.496743"], ["email", "email3@gmail.com"], ["encrypted_password", "$2a$04$iCYi7YCfTP4IPvk/JDy8AuVtwpUGQGtLIINC50iI9traLO3Y/C3Bm"], ["name", "Pablo"], ["updated_at", "2014-05-29 19:59:52.496743"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 19:59:52.498100"], ["owner_id", 205], ["subdomain", "subdomain3"], ["updated_at", "2014-05-29 19:59:52.498100"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:59:52 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 16:59:52 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email3@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 401 Unauthorized in 3ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.9ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain1') LIMIT 1
+  [1m[36mUser Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 20:01:00.562879"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$R3mj4lbtZyOBDBDW4xpTdejKu.6NKoNqonGNF1UISYm.HJfDcp2NW"], ["name", "Pablo"], ["updated_at", "2014-05-29 20:01:00.562879"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 20:01:00.567339"], ["owner_id", 206], ["subdomain", "subdomain1"], ["updated_at", "2014-05-29 20:01:00.567339"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 17:01:00 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 62ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 17:01:00 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email1@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://subdomain1.example.com/
+Completed 302 Found in 10ms (ActiveRecord: 1.0ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 17:01:00 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 206  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain2') LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email2@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 20:01:00.683996"], ["email", "email2@gmail.com"], ["encrypted_password", "$2a$04$07MsjPkgxZPA04jNke8nvuavWAUVxtOpDHYt6eA5Ectaa60pMy4Eu"], ["name", "Pablo"], ["updated_at", "2014-05-29 20:01:00.683996"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 20:01:00.685204"], ["owner_id", 207], ["subdomain", "subdomain2"], ["updated_at", "2014-05-29 20:01:00.685204"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 17:01:00 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 17:01:00 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email2@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://subdomain2.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 17:01:00 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 207  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 17:01:00 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.3ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain3') LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email3@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 20:01:00.718024"], ["email", "email3@gmail.com"], ["encrypted_password", "$2a$04$w1c1CGRaNeSRYq9BoiHx0.QKee8Qgukv8PHSuEIz33wio.ICJevP6"], ["name", "Pablo"], ["updated_at", "2014-05-29 20:01:00.718024"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 20:01:00.719090"], ["owner_id", 208], ["subdomain", "subdomain3"], ["updated_at", "2014-05-29 20:01:00.719090"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 17:01:00 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 17:01:00 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email3@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 401 Unauthorized in 3ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (1.0ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain1') LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 20:03:29.810419"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$AIlTuEhOPlXqNSFioIfyvOLeFWPlfA3e208q1ykz0AfJ90eN2.Ze2"], ["name", "Pablo"], ["updated_at", "2014-05-29 20:03:29.810419"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 20:03:29.814765"], ["owner_id", 209], ["subdomain", "subdomain1"], ["updated_at", "2014-05-29 20:03:29.814765"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 17:03:29 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (27.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (43.3ms)
+Completed 200 OK in 90ms (Views: 66.9ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 17:03:29 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email1@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://subdomain1.example.com/
+Completed 302 Found in 10ms (ActiveRecord: 1.0ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 17:03:29 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 209  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.6ms)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-05-29 17:03:29 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 209  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://subdomain1.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 1.0ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 17:03:29 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (1.0ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain1') LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 20:05:45.246282"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$A/VAHPEnat8lq0tmGDsEM.e9NEvjl760M6Z80gzJ2h/9wuKFg5YQ6"], ["name", "Pablo"], ["updated_at", "2014-05-29 20:05:45.246282"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 20:05:45.250508"], ["owner_id", 210], ["subdomain", "subdomain1"], ["updated_at", "2014-05-29 20:05:45.250508"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 17:05:45 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 61ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 17:05:45 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email1@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 401 Unauthorized in 6ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain2') LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email2@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-29 20:05:45.361772"], ["email", "email2@gmail.com"], ["encrypted_password", "$2a$04$/kCTq9GFtPyK/ijNdDvqnu/DQnYYvA.Gc3ony9pZQCG2lP3YCOVJ6"], ["name", "Pablo"], ["updated_at", "2014-05-29 20:05:45.361772"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-05-29 20:05:45.362855"], ["owner_id", 211], ["subdomain", "subdomain2"], ["updated_at", "2014-05-29 20:05:45.362855"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 17:05:45 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 17:05:45 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'email2@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://subdomain2.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 17:05:45 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 211  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.4ms)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-05-29 17:05:45 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 211  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://subdomain2.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 17:05:45 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.3ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain3') LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email3@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 20:05:45.409638"], ["email", "email3@gmail.com"], ["encrypted_password", "$2a$04$pO1Kf3xo/IKgJt0C1K3yruOLIHewSy981sWok1Mey.yVv7cH.S4Yi"], ["name", "Pablo"], ["updated_at", "2014-05-29 20:05:45.409638"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 20:05:45.410868"], ["owner_id", 212], ["subdomain", "subdomain3"], ["updated_at", "2014-05-29 20:05:45.410868"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 17:05:45 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 17:05:45 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email3@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://subdomain3.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 17:05:45 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 212  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain4') LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email4@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 20:05:45.491744"], ["email", "email4@gmail.com"], ["encrypted_password", "$2a$04$VCssrktLxSia5wgaJ0Q0V.QHxgCrgcU0/pnQv0EB26AkxmrNXIhlG"], ["name", "Pablo"], ["updated_at", "2014-05-29 20:05:45.491744"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 20:05:45.493007"], ["owner_id", 213], ["subdomain", "subdomain4"], ["updated_at", "2014-05-29 20:05:45.493007"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (1.0ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain1') LIMIT 1
+  [1m[36mUser Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 20:10:33.514346"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$H.Ga77KIm4sAMqCVZw2VJeECbtmDEoKSvwzCyZ4F.uIxQ3RwdOgqm"], ["name", "Pablo"], ["updated_at", "2014-05-29 20:10:33.514346"]]
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 20:10:33.520802"], ["owner_id", 214], ["subdomain", "subdomain1"], ["updated_at", "2014-05-29 20:10:33.520802"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 17:10:33 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 92ms (Views: 66.5ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 17:10:33 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email1@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://subdomain1.example.com/
+Completed 302 Found in 10ms (ActiveRecord: 1.0ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 17:10:33 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 214  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.7ms)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-05-29 17:10:33 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 214  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://subdomain1.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 17:10:33 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain2') LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email2@gmail.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-29 20:10:33.682400"], ["email", "email2@gmail.com"], ["encrypted_password", "$2a$04$e8YCnu..rPCc4s4.Ijz51.GAdp.ctQ.4FgrR0104oWwGJAeqCuRm."], ["name", "Pablo"], ["updated_at", "2014-05-29 20:10:33.682400"]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-05-29 20:10:33.684893"], ["owner_id", 215], ["subdomain", "subdomain2"], ["updated_at", "2014-05-29 20:10:33.684893"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 17:10:33 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 17:10:33 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'email2@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+Completed 401 Unauthorized in 3ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain3') LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email3@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 20:10:33.725581"], ["email", "email3@gmail.com"], ["encrypted_password", "$2a$04$lxnUYZZVJcT/0Hqejehacu508nplz123cVrM2eeIBOGpZ6fgjmcuy"], ["name", "Pablo"], ["updated_at", "2014-05-29 20:10:33.725581"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 20:10:33.727034"], ["owner_id", 216], ["subdomain", "subdomain3"], ["updated_at", "2014-05-29 20:10:33.727034"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 17:10:33 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-29 17:10:33 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email3@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://subdomain3.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2014-05-29 17:10:33 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 216  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain4') LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email4@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 20:10:33.759057"], ["email", "email4@gmail.com"], ["encrypted_password", "$2a$04$SubauxO5iITXN4kB62dcquEgxvXSYQZgyfMBt4xe.ZM/ZfVRpO/A6"], ["name", "Pablo"], ["updated_at", "2014-05-29 20:10:33.759057"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 20:10:33.760248"], ["owner_id", 217], ["subdomain", "subdomain4"], ["updated_at", "2014-05-29 20:10:33.760248"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (1.0ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain1') LIMIT 1
+  [1m[36mUser Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-29 20:11:06.019667"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$fFPjhDnDufJaApUFz9eW8uHdJuLGrvzdA7eu3G3w.rzAi79fLnhQu"], ["name", "Pablo"], ["updated_at", "2014-05-29 20:11:06.019667"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-29 20:11:06.023560"], ["owner_id", 218], ["subdomain", "subdomain1"], ["updated_at", "2014-05-29 20:11:06.023560"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-29 17:11:06 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (42.5ms)
+Completed 200 OK in 88ms (Views: 65.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (33.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mAccount Exists (33.6ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('www') LIMIT 1[0m
+  [1m[35mAccount Exists (0.5ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('www') LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mAccount Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('.test') LIMIT 1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('.test') LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mAccount Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE "accounts"."subdomain" IS NULL LIMIT 1[0m
+  [1m[35mAccount Exists (0.5ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE "accounts"."subdomain" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAccount Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('www') LIMIT 1[0m
+  [1m[35mAccount Exists (0.2ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('www') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAccount Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('test') LIMIT 1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('test') LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAccount Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('test/') LIMIT 1[0m
+  [1m[35mAccount Exists (0.3ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('test/') LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAccount Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE "accounts"."subdomain" IS NULL LIMIT 1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE "accounts"."subdomain" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mAccount Load (0.7ms)[0m  [1mSELECT  "accounts".* FROM "accounts"   ORDER BY "accounts"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (36.5ms)[0m  [1mINSERT INTO "accounts" ("created_at", "subdomain", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2014-05-30 17:53:11.810813"], ["subdomain", "a"], ["updated_at", "2014-05-30 17:53:11.810813"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mAccount Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('a') LIMIT 1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('a') LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (48.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1
+  [1m[36mSQL (13.8ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-30 17:53:11.922919"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$KhAKAUE/KqdO2clj7.7VYeUQ3dZlFaIhBn6yYXxpdU9FTNOOTS33q"], ["name", "Pablo"], ["updated_at", "2014-05-30 17:53:11.922919"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.6ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('test') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-30 17:53:11.944712"], ["owner_id", 219], ["subdomain", "test"], ["updated_at", "2014-05-30 17:53:11.944712"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email2@gmail.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-30 17:53:11.953057"], ["email", "email2@gmail.com"], ["encrypted_password", "$2a$04$CGvUNZbe4O2SIK2Mor1GT.bixQ16UN/uAbH02Wiz4rqDmLKOlpD.q"], ["name", "Pablo"], ["updated_at", "2014-05-30 17:53:11.953057"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mAccount Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('test') LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mAccount Exists (0.5ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('bolandrm') LIMIT 1
+  [1m[36mAccount Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('bolandrm') LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-05-30 14:53:12 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 196ms (Views: 195.8ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2014-05-30 14:53:12 -0300
+Processing by AccountsController#new as HTML
+  Rendered accounts/new.html.erb within layouts/application (40.4ms)
+Completed 200 OK in 59ms (Views: 43.3ms | ActiveRecord: 0.0ms)
+Started POST "/accounts" for 127.0.0.1 at 2014-05-30 14:53:12 -0300
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "account"=>{"owner_attributes"=>{"name"=>"Pablo", "email"=>"pablo@pablo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "subdomain"=>"test_subdomain"}, "commit"=>"Create Account"}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('test_subdomain') LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'pablo@pablo.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-30 17:53:12.331183"], ["email", "pablo@pablo.com"], ["encrypted_password", "$2a$04$ERTTat2/dABhZFVnNhtGyOtGPoy8aI/j05wv8fF0dpohBkYo3j8RK"], ["name", "Pablo"], ["updated_at", "2014-05-30 17:53:12.331183"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-05-30 17:53:12.332477"], ["owner_id", 221], ["subdomain", "test_subdomain"], ["updated_at", "2014-05-30 17:53:12.332477"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://example.com/
+Completed 302 Found in 13ms (ActiveRecord: 2.4ms)
+Started GET "/" for 127.0.0.1 at 2014-05-30 14:53:12 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain1') LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email3@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-30 17:53:12.350206"], ["email", "email3@gmail.com"], ["encrypted_password", "$2a$04$V69URnA0e97.gUyjLqjb7OWuO3RHFveDB4esdmzsuLO8G/3ZWzlk2"], ["name", "Pablo"], ["updated_at", "2014-05-30 17:53:12.350206"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-05-30 17:53:12.351442"], ["owner_id", 222], ["subdomain", "subdomain1"], ["updated_at", "2014-05-30 17:53:12.351442"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-30 14:53:12 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (41.9ms)
+Completed 200 OK in 64ms (Views: 59.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain2') LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email4@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-30 17:53:12.474218"], ["email", "email4@gmail.com"], ["encrypted_password", "$2a$04$V/ohxKKZVVVZbO4s9QwYju1avcjuueVnwrRQYv/q66Q.HdYgSjS.S"], ["name", "Pablo"], ["updated_at", "2014-05-30 17:53:12.474218"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-05-30 17:53:12.475463"], ["owner_id", 223], ["subdomain", "subdomain2"], ["updated_at", "2014-05-30 17:53:12.475463"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-30 14:53:12 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-30 14:53:12 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email4@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'email4@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://subdomain2.example.com/
+Completed 302 Found in 46ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2014-05-30 14:53:12 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 223  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain3') LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email5@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-30 17:53:12.602946"], ["email", "email5@gmail.com"], ["encrypted_password", "$2a$04$HgA2AJGdAle8W5S8FhE/.O.ibAf/glK3pOhvEHkIRhHnAN/.jFlle"], ["name", "Pablo"], ["updated_at", "2014-05-30 17:53:12.602946"]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-05-30 17:53:12.604123"], ["owner_id", 224], ["subdomain", "subdomain3"], ["updated_at", "2014-05-30 17:53:12.604123"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-30 14:53:12 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-30 14:53:12 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email5@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'email5@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+Completed 401 Unauthorized in 3ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email5@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain4') LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email6@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-30 17:53:12.640010"], ["email", "email6@gmail.com"], ["encrypted_password", "$2a$04$gRvcwNOSqNCODtC0n3B.TOITnQ5Iz4iTbVcrCdzes47mml2AXlZW6"], ["name", "Pablo"], ["updated_at", "2014-05-30 17:53:12.640010"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-30 17:53:12.641003"], ["owner_id", 225], ["subdomain", "subdomain4"], ["updated_at", "2014-05-30 17:53:12.641003"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-30 14:53:12 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-30 14:53:12 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email6@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email6@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://subdomain4.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2014-05-30 14:53:12 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 225  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.5ms)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-05-30 14:53:12 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 225  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://subdomain4.example.com/
+Completed 302 Found in 33ms (ActiveRecord: 1.3ms)
+Started GET "/" for 127.0.0.1 at 2014-05-30 14:53:12 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.9ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain1') LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-30 17:56:43.214889"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$d0eB7poLdn0MKyoc9e.M3uIHAP1AEjEu.orqmYcxwLrqS5Zybe9OS"], ["name", "Pablo"], ["updated_at", "2014-05-30 17:56:43.214889"]]
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-30 17:56:43.218637"], ["owner_id", 226], ["subdomain", "subdomain1"], ["updated_at", "2014-05-30 17:56:43.218637"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-30 14:56:43 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 88ms (Views: 65.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mAccount Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('test') LIMIT 1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('test') LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mAccount Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('test/') LIMIT 1[0m
+  [1m[35mAccount Exists (0.3ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('test/') LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAccount Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('www') LIMIT 1[0m
+  [1m[35mAccount Exists (0.5ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('www') LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mAccount Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('www') LIMIT 1[0m
+  [1m[35mAccount Exists (0.5ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('www') LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mAccount Load (0.7ms)[0m  [1mSELECT  "accounts".* FROM "accounts"   ORDER BY "accounts"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "accounts" ("created_at", "subdomain", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2014-05-30 18:04:21.398157"], ["subdomain", "a"], ["updated_at", "2014-05-30 18:04:21.398157"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mAccount Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('a') LIMIT 1[0m
+  [1m[35mAccount Exists (0.6ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('a') LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mAccount Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE "accounts"."subdomain" IS NULL LIMIT 1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE "accounts"."subdomain" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mAccount Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('bolandrm') LIMIT 1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('bolandrm') LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mAccount Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('.test') LIMIT 1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('.test') LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAccount Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE "accounts"."subdomain" IS NULL LIMIT 1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE "accounts"."subdomain" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-30 18:04:21.458230"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$Eq/QQLwsIByHeNdOjATWZuZKVEhEdS4D9fJmI0DbPTL7CsmDNwt1O"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:04:21.458230"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('test') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-30 18:04:21.462104"], ["owner_id", 227], ["subdomain", "test"], ["updated_at", "2014-05-30 18:04:21.462104"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email2@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-30 18:04:21.466965"], ["email", "email2@gmail.com"], ["encrypted_password", "$2a$04$gSAp.IYRI1zvS9rPlaC.keOd62C983fJCasJtr6svJOucWuGCKX6e"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:04:21.466965"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mAccount Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('test') LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain1') LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email3@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-30 18:04:21.479119"], ["email", "email3@gmail.com"], ["encrypted_password", "$2a$04$pPCxmEIKwuPSQ2TE5ByVF.MxGdzrwR2PF2wyv7RqUAmI0s06cReKG"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:04:21.479119"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-05-30 18:04:21.480212"], ["owner_id", 229], ["subdomain", "subdomain1"], ["updated_at", "2014-05-30 18:04:21.480212"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:04:21 -0300
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain2') LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email4@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-30 18:04:21.495239"], ["email", "email4@gmail.com"], ["encrypted_password", "$2a$04$oirg2X848CmiUNNRlVkgJO4ArixsDoLhvkllJXFNL/sgbtTmWi7sK"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:04:21.495239"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-05-30 18:04:21.496366"], ["owner_id", 230], ["subdomain", "subdomain2"], ["updated_at", "2014-05-30 18:04:21.496366"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:04:21 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 58ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:04:21 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email4@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'email4@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+Completed 401 Unauthorized in 5ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email4@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain3') LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email5@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-30 18:04:21.595955"], ["email", "email5@gmail.com"], ["encrypted_password", "$2a$04$eseAswI5LifZBRwlinUri.WjjuRgUkYs3uD0UGyYiHk1vKalA5ipq"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:04:21.595955"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-30 18:04:21.596989"], ["owner_id", 231], ["subdomain", "subdomain3"], ["updated_at", "2014-05-30 18:04:21.596989"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:04:21 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:04:21 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email5@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email5@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://subdomain3.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2014-05-30 15:04:21 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 231  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.3ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain4') LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email6@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-30 18:04:21.632771"], ["email", "email6@gmail.com"], ["encrypted_password", "$2a$04$Quoh0DM6YnHEvE5ZcyGwRuTLrvxpV.ttS0zxN9DNUBaAal9hBxEUe"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:04:21.632771"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-30 18:04:21.633778"], ["owner_id", 232], ["subdomain", "subdomain4"], ["updated_at", "2014-05-30 18:04:21.633778"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:04:21 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:04:21 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email6@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email6@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://subdomain4.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2014-05-30 15:04:21 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 232  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.5ms)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-05-30 15:04:21 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 232  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://subdomain4.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2014-05-30 15:04:21 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-05-30 15:04:21 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+Started GET "/accounts/new" for 127.0.0.1 at 2014-05-30 15:04:21 -0300
+Processing by AccountsController#new as HTML
+  Rendered accounts/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+Started POST "/accounts" for 127.0.0.1 at 2014-05-30 15:04:21 -0300
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "account"=>{"owner_attributes"=>{"name"=>"Pablo", "email"=>"pablo@pablo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "subdomain"=>"test_subdomain"}, "commit"=>"Create Account"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('test_subdomain') LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'pablo@pablo.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-30 18:04:21.701338"], ["email", "pablo@pablo.com"], ["encrypted_password", "$2a$04$XBi506xHVtwJ.5UgsDOeFO/9QzkNVB.J.2TOTor2FPyd3qpqhfnOC"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:04:21.701338"]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-05-30 18:04:21.702576"], ["owner_id", 233], ["subdomain", "test_subdomain"], ["updated_at", "2014-05-30 18:04:21.702576"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://example.com/
+Completed 302 Found in 11ms (ActiveRecord: 2.1ms)
+Started GET "/" for 127.0.0.1 at 2014-05-30 15:04:21 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (1.0ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain1') LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-30 18:10:10.264851"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$CFnpd5g1DkXFCXHHNe8yqeXHod.ynAmb6ykTejfclVSb7qOo9x9me"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:10:10.264851"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-30 18:10:10.268967"], ["owner_id", 234], ["subdomain", "subdomain1"], ["updated_at", "2014-05-30 18:10:10.268967"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:10:10 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 89ms (Views: 65.9ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:10:10 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email1@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://subdomain1.example.com/
+Completed 302 Found in 10ms (ActiveRecord: 1.0ms)
+Started GET "/" for 127.0.0.1 at 2014-05-30 15:10:10 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 234  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.3ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain2') LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email2@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-30 18:10:10.410759"], ["email", "email2@gmail.com"], ["encrypted_password", "$2a$04$Y7UBla9pP6R8034yqup/ue4kjTRCJXoaQiZmpjQw6lSGTsUhD3Lte"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:10:10.410759"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-30 18:10:10.411979"], ["owner_id", 235], ["subdomain", "subdomain2"], ["updated_at", "2014-05-30 18:10:10.411979"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:10:10 -0300
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain3') LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email3@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-30 18:10:10.425398"], ["email", "email3@gmail.com"], ["encrypted_password", "$2a$04$xTxbstWAVGObDZJCu2C3oOt98T/Clj/l.hZQjjWNVQ.RUBg78r7L6"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:10:10.425398"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-30 18:10:10.426905"], ["owner_id", 236], ["subdomain", "subdomain3"], ["updated_at", "2014-05-30 18:10:10.426905"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:10:10 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:10:10 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email3@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://subdomain3.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2014-05-30 15:10:10 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 236  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-05-30 15:10:10 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 236  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://subdomain3.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+Started GET "/" for 127.0.0.1 at 2014-05-30 15:10:10 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain4') LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email4@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-30 18:10:10.470765"], ["email", "email4@gmail.com"], ["encrypted_password", "$2a$04$rT57NyoET7cRNJ3QxnInROCh67iQ9YBKj8aFsZVsE7XP.OGR.a.ua"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:10:10.470765"]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-05-30 18:10:10.472024"], ["owner_id", 237], ["subdomain", "subdomain4"], ["updated_at", "2014-05-30 18:10:10.472024"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:10:10 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:10:10 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email4@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'email4@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+Completed 401 Unauthorized in 3ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email4@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain5') LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email5@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-30 18:10:10.507213"], ["email", "email5@gmail.com"], ["encrypted_password", "$2a$04$RtTUs/rsdYAy9t8xad49FOChKK1FnLcKRQqO07oHyZNGjKuL7sQ2W"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:10:10.507213"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-30 18:10:10.508380"], ["owner_id", 238], ["subdomain", "subdomain5"], ["updated_at", "2014-05-30 18:10:10.508380"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.8ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain1') LIMIT 1
+  [1m[36mUser Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-30 18:11:07.962924"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$4fTmarBzRPHqM499h2NxCeisOvPrShrrBosQRsR9F3jAHCHL2Ckcy"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:11:07.962924"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-30 18:11:07.966752"], ["owner_id", 239], ["subdomain", "subdomain1"], ["updated_at", "2014-05-30 18:11:07.966752"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:11:07 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 61ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:11:08 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email1@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://subdomain1.example.com/
+Completed 302 Found in 11ms (ActiveRecord: 1.0ms)
+Started GET "/" for 127.0.0.1 at 2014-05-30 15:11:08 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 239  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.6ms)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-05-30 15:11:08 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 239  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://subdomain1.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+Started GET "/" for 127.0.0.1 at 2014-05-30 15:11:08 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain2') LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email2@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-30 18:11:08.091996"], ["email", "email2@gmail.com"], ["encrypted_password", "$2a$04$DXe3G1fpEXoU6f6foWLDQuUOu0RoWMApgcFJA4YzM2Xnm0PwDEDaG"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:11:08.091996"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-05-30 18:11:08.093197"], ["owner_id", 240], ["subdomain", "subdomain2"], ["updated_at", "2014-05-30 18:11:08.093197"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:11:08 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:11:08 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'email2@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+Completed 401 Unauthorized in 3ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain3') LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email3@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-30 18:11:08.128586"], ["email", "email3@gmail.com"], ["encrypted_password", "$2a$04$x2SG5uF0fyLz33skwDlYaOsRuR9s2TBOlSyy5AEQybTTRtdrMgo8W"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:11:08.128586"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-30 18:11:08.129819"], ["owner_id", 241], ["subdomain", "subdomain3"], ["updated_at", "2014-05-30 18:11:08.129819"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:11:08 -0300
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.5ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain4') LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email4@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-30 18:11:08.140657"], ["email", "email4@gmail.com"], ["encrypted_password", "$2a$04$HjyEMDagxl7qZG8qmKcuou2MY1dWxs25r/X0FrSf7WGQBHRfPbvIO"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:11:08.140657"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-30 18:11:08.141917"], ["owner_id", 242], ["subdomain", "subdomain4"], ["updated_at", "2014-05-30 18:11:08.141917"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain5') LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email5@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-30 18:11:08.148144"], ["email", "email5@gmail.com"], ["encrypted_password", "$2a$04$XdhZuhp10uqtQPwDdIyQl.8XaIXJ12oxDytzlXXjzpY3tvbSKlz2O"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:11:08.148144"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-30 18:11:08.149427"], ["owner_id", 243], ["subdomain", "subdomain5"], ["updated_at", "2014-05-30 18:11:08.149427"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.3ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain6') LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email6@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-30 18:11:08.158092"], ["email", "email6@gmail.com"], ["encrypted_password", "$2a$04$eq0LZfwsaE8DKW3kEJOlgOiZtgUCcfyM/l3rtb9ZoaeN/zBEWqJN2"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:11:08.158092"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-30 18:11:08.159365"], ["owner_id", 244], ["subdomain", "subdomain6"], ["updated_at", "2014-05-30 18:11:08.159365"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:11:08 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:11:08 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email6@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email6@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://subdomain6.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2014-05-30 15:11:08 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 244  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (1.0ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain1') LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-30 18:15:24.541896"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$eAMcbyy34s0Ttk.MRiQdbOdlbvgWruwZ75fsFyCKyjDoaOk2lon1C"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:15:24.541896"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-30 18:15:24.545893"], ["owner_id", 245], ["subdomain", "subdomain1"], ["updated_at", "2014-05-30 18:15:24.545893"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:15:24 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 62ms (Views: 39.1ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:15:24 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email1@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://subdomain1.example.com/
+Completed 302 Found in 9ms (ActiveRecord: 0.9ms)
+Started GET "/" for 127.0.0.1 at 2014-05-30 15:15:24 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 245  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain2') LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email2@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-30 18:15:24.658707"], ["email", "email2@gmail.com"], ["encrypted_password", "$2a$04$3MKRazMJKwFx.Ba58Kk3P.ESx20YUY60Xg9j.Csi5N1o3e1u8k9QK"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:15:24.658707"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-30 18:15:24.659786"], ["owner_id", 246], ["subdomain", "subdomain2"], ["updated_at", "2014-05-30 18:15:24.659786"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:15:24 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:15:24 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'email2@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 401 Unauthorized in 3ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain3') LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email3@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-30 18:15:24.693074"], ["email", "email3@gmail.com"], ["encrypted_password", "$2a$04$9a3Dmf.g8gWjSq7nQJn5.umsLKQqc7SdH.5pFSBSg3lDZb8k1.g26"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:15:24.693074"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-05-30 18:15:24.694090"], ["owner_id", 247], ["subdomain", "subdomain3"], ["updated_at", "2014-05-30 18:15:24.694090"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:15:24 -0300
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain4') LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email4@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-30 18:15:24.704386"], ["email", "email4@gmail.com"], ["encrypted_password", "$2a$04$yJYLQTarKHu6DGgiJtfawe7memhewUQpHGi1xJ1gQP2AUjxlidW6W"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:15:24.704386"]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-05-30 18:15:24.705897"], ["owner_id", 248], ["subdomain", "subdomain4"], ["updated_at", "2014-05-30 18:15:24.705897"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain5') LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email5@gmail.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-30 18:15:24.715715"], ["email", "email5@gmail.com"], ["encrypted_password", "$2a$04$1LctP/beHfuj8VZ7O8Ch0OaqG6uK0BePaMfvpEu1cW21ww6pPFj8q"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:15:24.715715"]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-05-30 18:15:24.717563"], ["owner_id", 249], ["subdomain", "subdomain5"], ["updated_at", "2014-05-30 18:15:24.717563"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain6') LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email6@gmail.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-05-30 18:15:24.731176"], ["email", "email6@gmail.com"], ["encrypted_password", "$2a$04$DBd390m42..g4KN0FYPxAOmaPOwHU7HjZThDeqsU/35UaZBMkr/2e"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:15:24.731176"]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-05-30 18:15:24.733341"], ["owner_id", 250], ["subdomain", "subdomain6"], ["updated_at", "2014-05-30 18:15:24.733341"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:15:24 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-30 15:15:24 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"email6@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'email6@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://subdomain6.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2014-05-30 15:15:24 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 250  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.6ms)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-05-30 15:15:24 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 250  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://subdomain6.example.com/
+Completed 302 Found in 54ms (ActiveRecord: 1.1ms)
+Started GET "/" for 127.0.0.1 at 2014-05-30 15:15:24 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (1.0ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain1') LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email1@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-30 18:15:53.064351"], ["email", "email1@gmail.com"], ["encrypted_password", "$2a$04$eq62OKgxUlJ772qqDvsPhOCGQ9NAJM4qm4oo4v5SGa4g2LlQMrA1i"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:15:53.064351"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-30 18:15:53.068279"], ["owner_id", 251], ["subdomain", "subdomain1"], ["updated_at", "2014-05-30 18:15:53.068279"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT  1 AS one FROM "accounts"  WHERE LOWER("accounts"."subdomain") = LOWER('subdomain2') LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'email2@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-05-30 18:15:53.075013"], ["email", "email2@gmail.com"], ["encrypted_password", "$2a$04$/mn2b0rXUTdJUftuM0eKauW3/o4W.tpNA.9KuODodQqhlpf5WHYsy"], ["name", "Pablo"], ["updated_at", "2014-05-30 18:15:53.075013"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accounts" ("created_at", "owner_id", "subdomain", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-05-30 18:15:53.076227"], ["owner_id", 252], ["subdomain", "subdomain2"], ["updated_at", "2014-05-30 18:15:53.076227"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
